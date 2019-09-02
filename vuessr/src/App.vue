@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="assets/logo.png">
+    <router-link :to='{path: "/a"}'>a</router-link>
+    <router-link :to='{path: "/b"}'>b</router-link>
     <router-view/>
   </div>
 </template>
@@ -10,7 +12,6 @@ export default {
   name: 'App'
 }
 </script>
-
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

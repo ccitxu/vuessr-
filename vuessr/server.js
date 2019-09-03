@@ -1,30 +1,26 @@
-console.log('日记');
 const exp = require('express');
+const Vue = require('vue');
 const express = require('express')()
-const renderer = require('vue-server-renderer').createRenderer();
+const rend = require('vue-server-renderer');
 const createApp = require('./dist/bundle.server.js')['default'];
 const clinetBoundleFileUrl = '/bundle.client.js';
-
+const renderer = rend.createRenderer({
+    template: require('fs').readFileSync('./index.template.html', 'utf-8')
+})
 express.use('/', exp.static(__dirname + '/dist'))
     // 响应路由请求
 express.get('*', (req, res) => {
     const context = { url: req.url }
     createApp(context).then(app => {
-        renderer.renderToString(app, (err, html) => {
+        const context2 = {
+            title: 'hello',
+            meta: `
+                   <meta charset="utf-8"/>
+                `
+        }
+        renderer.renderToString(app, context2, (err, html) => {
             if (err) { return res.state(500).end('运行时错误') }
-            res.send(`
-                <!DOCTYPE html>
-                <html lang="en">
-                    <head>
-                        <meta charset="UTF-8">
-                        <title>Vue2.0 SSR渲染页面</title>
-                        <script src="${clinetBoundleFileUrl}"></script>
-                    </head>
-                    <body>
-                        ${html}
-                    </body>
-                </html>
-            `)
+            res.send(html)
         })
     }, err => {
         if (err.code === 404) {

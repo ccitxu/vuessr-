@@ -1,15 +1,23 @@
 <template>
-  <div id="app">
+  <div id="app" data-server-rendered="true">
     <img src="assets/logo.png">
-    <router-link :to='{path: "/a"}'>a</router-link>
-    <router-link :to='{path: "/b"}'>b</router-link>
+   {{$route}}
+    <button @click="tourl()">aaa</button>
+    <router-link to='/a'>aaa</router-link>
+    <button @click="$router.push('/b')">bbb</button>
+     <router-link to='/b'>bbb</router-link>
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods:{
+    tourl(){
+      console.log('asdasd');
+    }
+  }
 }
 </script>
 <style>

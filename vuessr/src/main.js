@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import { createRouter } from './router'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true
 export function createVM() {
     const router = createRouter();
     const vm = new Vue({

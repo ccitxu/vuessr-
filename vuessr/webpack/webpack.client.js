@@ -1,9 +1,5 @@
 const path = require('path');
-<<<<<<< HEAD
-const rootpath = path.resolve(__dirname, '..');
-=======
 const rootPath = path.resolve(__dirname, '..');
->>>>>>> 27b0780affdcd788c1de77a378a14db75631a2c8
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir)

@@ -4,7 +4,7 @@ export default context => {
         const { vm, router } = createVM();
         router.push(context.url);
         router.onReady(() => {
-            const matchedComponent = vm.$router.getMatchedComponents();
+            const matchedComponent = router.getMatchedComponents();
             if (matchedComponent.length <= 0) {
                 return reject({ code: 404 })
             }

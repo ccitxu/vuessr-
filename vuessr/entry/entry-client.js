@@ -1,5 +1,5 @@
 import { createVM } from '../src/main'
 const { vm, router } = createVM();
-router.onReady(() => {
+window.addEventListener('load', (e) => {
     vm.$mount('#app');
 })

@@ -1,15 +1,15 @@
 const path = require('path');
-const rootpath = path.resolve(__dirname, '..');
+const rootPath = path.resolve(__dirname, '..');
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir)
 }
 module.exports = {
     target: 'node',
-    entry: ['babel-polyfill', path.join(rootpath, 'entry/entry-server.js')],
+    entry: ['babel-polyfill', path.join(rootPath, 'entry/entry-server.js')],
     output: {
         libraryTarget: 'commonjs2',
-        path: path.join(rootpath, 'dist'),
+        path: path.join(rootPath, 'dist'),
         filename: 'bundle.server.js'
     },
     module: {
@@ -19,8 +19,11 @@ module.exports = {
         }, {
             test: /\.js$/,
             loader: 'babel-loader',
-            include: rootpath,
-            exclude: /node_modules/
+            include: rootPath,
+            exclude: /node_modules/,
+            options: {
+                presets: ['es2015']
+            }
         }]
     },
     resolve: {

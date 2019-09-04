@@ -1,15 +1,20 @@
 <template>
   <div id="app">
     <img src="assets/logo.png">
-    <router-link :to='{path: "/a"}'>a</router-link>
-    <router-link :to='{path: "/b"}'>b</router-link>
+     <router-link to='/a'>aaa</router-link>
+     <router-link to='/b'>bbb</router-link>
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods:{
+    tourl(){
+      console.log('asdasd');
+    }
+  }
 }
 </script>
 <style>

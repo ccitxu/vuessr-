@@ -1,6 +1,5 @@
 const path = require('path');
 const rootpath = path.resolve(__dirname, '..');
-const cleanWebpackPlugin = require('clean-webpack-plugin');
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir)

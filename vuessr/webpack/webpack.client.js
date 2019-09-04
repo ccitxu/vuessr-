@@ -1,26 +1,30 @@
 const path = require('path');
-const rootpath = path.resolve(__dirname, '..');
+const rootPath = path.resolve(__dirname, '..');
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir)
 }
 module.exports = {
-    target: 'node',
-    entry: ['babel-polyfill', path.join(rootpath, 'entry/entry-client.js')],
+    entry: ['babel-polyfill', path.join(rootPath, 'entry/entry-client.js')],
     output: {
-        path: path.join(rootpath, 'dist'),
-        filename: 'bundle.client.js'
+        path: path.join(rootPath, 'dist'),
+        filename: 'bundle.client.js',
     },
     module: {
         rules: [{
-            test: /\.vue$/,
-            loader: 'vue-loader'
-        }, {
-            test: /\.js$/,
-            loader: 'babel-loader',
-            include: rootpath,
-            exclude: /node_modules/
-        }]
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            },
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+                include: rootPath,
+                exclude: /node_modules/,
+                options: {
+                    presets: ['es2015']
+                }
+            }
+        ]
     },
     plugins: [],
     resolve: {

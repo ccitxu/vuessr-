@@ -1,10 +1,7 @@
 <template>
-  <div id="app" data-server-rendered="true">
+  <div id="app">
     <img src="assets/logo.png">
-   {{$route}}
-    <button @click="tourl()">aaa</button>
-    <router-link to='/a'>aaa</router-link>
-    <button @click="$router.push('/b')">bbb</button>
+     <router-link to='/a'>aaa</router-link>
      <router-link to='/b'>bbb</router-link>
     <router-view/>
   </div>

@@ -1,30 +1,28 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-const a = () =>
-    import ('@/components/a');
-const b = () =>
-    import ('@/components/b')
 Vue.use(Router)
 const routes = [{
         path: '/',
         name: 'HelloWorld',
-        component: HelloWorld
+        component: () =>
+            import ('../components/HelloWorld')
     },
     {
         path: '/a',
         name: 'a',
-        component: a
+        component: () =>
+            import ('../components/a')
     },
     {
         path: '/b',
-        name: 'b',
-        component: b
+        component: () =>
+            import ('../components/b')
     }
 ]
-export function createRouter() {
-    return new Router({
+export default function createRouter() {
+    let vueRouter = new Router({
         mode: 'history',
         routes
     })
+    return vueRouter
 }

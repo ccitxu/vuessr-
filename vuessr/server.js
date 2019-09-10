@@ -40,7 +40,7 @@ express.get('*', (req, res) => {
 })
 
 
-// 服务器监听地址
+// 服务器监听地址npm
 express.listen(8001, () => {
     console.log('SSR服务器已启动！')
 });

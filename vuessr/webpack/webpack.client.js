@@ -27,10 +27,7 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 include: rootPath,
-                exclude: /node_modules/,
-                options: {
-                    presets: ['es2015']
-                }
+                exclude: /node_modules/
             }
         ]
     },

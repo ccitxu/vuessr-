@@ -1,4 +1,4 @@
-import { createVM } from '../src/main.js'
+import { createVM } from '../src/appmian.js'
 export default context => {
     return new Promise((resolve, reject) => {
         const { vm, router } = createVM();

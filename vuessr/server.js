@@ -34,8 +34,7 @@ express.get('*', (req, res) => {
             `)
         })
     }, err => {
-
-        if (err.code === 404) { res.status(404).end('所请求的页面不存在') }
+        if (err.code === 404) { res.status(404).end('所请求的页面不存在1111') }
     })
 })
 

@@ -1,5 +1,6 @@
 const path = require('path');
 const rootPath = path.resolve(__dirname, '..');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir)
@@ -32,5 +33,8 @@ module.exports = {
             'vue$': 'vue/dist/vue.runtime.esm.js',
             '@': resolve('src')
         }
-    }
+    },
+    plugins: [
+        new VueLoaderPlugin()
+    ]
 };

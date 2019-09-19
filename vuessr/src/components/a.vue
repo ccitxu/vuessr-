@@ -11,10 +11,15 @@ export default {
         }
     },
     methods:{
-     demo(){
-         alert('aaa');
-     }
+      
     },
+    async demo(axios){
+         await axios.get('http://localhost:8008/api/info').then(res => {
+                 this.content=res;
+                 return res;
+          })
+        
+     },
     created(){
     }
 }

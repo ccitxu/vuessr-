@@ -24,21 +24,6 @@ express.get('*', (req, res) => {
                     return res.status(500).end('运行时错误')
                 }
                 res.send(html);
-                // res.send(`
-                //         <!DOCTYPE html>
-                //         <html lang="en">
-                //             <head>
-                //                 <meta charset="UTF-8">
-                //                 <title>Vue2.0 SSR渲染页面</title>
-                //                 <script src="${clientBoundleFileUrl}"></script>
-                //             </head>
-                //             <body>
-                //                 <div id="app">
-                //                     ${html}
-                //                 </div>
-                //             </body>
-                //         </html>
-                //     `)
             })
         })
 

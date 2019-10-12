@@ -1,7 +1,19 @@
 const path = require('path');
 const rootPath = path.resolve(__dirname, '..');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin') <<
+    <<
+    <<
+    <
+    HEAD
 const htmlWebpackplugin = require('html-webpack-plugin');
+
+===
+===
+=
+const HtmlWebpackPlugin = require('html-webpack-plugin'); >>>
+>>>
+>
+06 d7ce9d8fcc713ccfc1ea2037bfd4fcde5b1a4b
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir)
@@ -34,10 +46,11 @@ module.exports = {
     },
     plugins: [
         new VueLoaderPlugin(),
-        new htmlWebpackplugin({
+        new HtmlWebpackPlugin({
+            filename: 'index.template.html',
             template: path.resolve(__dirname, '../index.template.html'),
             files: {
-                js: 'bundle.client.js'
+                js: '/bundle.client.js'
             }
         })
     ]

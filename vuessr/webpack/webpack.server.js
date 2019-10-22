@@ -1,19 +1,7 @@
 const path = require('path');
 const rootPath = path.resolve(__dirname, '..');
-const VueLoaderPlugin = require('vue-loader/lib/plugin') <<
-    <<
-    <<
-    <
-    HEAD
-const htmlWebpackplugin = require('html-webpack-plugin');
-
-===
-===
-=
-const HtmlWebpackPlugin = require('html-webpack-plugin'); >>>
->>>
->
-06 d7ce9d8fcc713ccfc1ea2037bfd4fcde5b1a4b
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir)
